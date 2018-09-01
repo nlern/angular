@@ -1,0 +1,4 @@
+{
+  "apiUrl": "http://localhost@prod:8080/someapp/api",
+  "reportUrl": "http://localhost@prod:8080/someapp/reports"
+}
