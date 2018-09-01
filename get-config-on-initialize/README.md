@@ -1,6 +1,7 @@
 # Demo2 - Load config files from json on App Initialization
 
-A sample project illustrating how to load config files on application initialization.  This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
+A sample project illustrating how to load config files on application initialization.  Source was taken from [this](https://gist.github.com/fernandohu/122e88c3bcd210bbe41c608c36306db9) github gist.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
 
 ## Development server
 
