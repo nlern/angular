@@ -3,8 +3,12 @@ import { NgModule } from '@angular/core';
 
 // app config related
 import { APP_INITIALIZER } from '@angular/core';
-import { AppConfig } from './app.config';
 import { HttpClientModule } from '@angular/common/http';
+import { AppConfig } from './app.config';
+
+export function initializeApp(appConfig: AppConfig) {
+  return () => appConfig.Load();
+}
 
 // modules
 import { ReactiveFormsModule } from '@angular/forms';
@@ -29,7 +33,7 @@ import { DebugPanelComponent } from './counter/debug-panel/debug-panel.component
     AppConfig,
     {
       provide: APP_INITIALIZER,
-      useFactory: (config: AppConfig) => () => config.Load(),
+      useFactory: initializeApp,
       deps: [AppConfig],
       multi: true
     },
