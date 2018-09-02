@@ -16,6 +16,8 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class OrderSheetComponent implements OnInit, OnDestroy {
 
+  protected config = AppConfig.settings;
+
   // observable subscription related
   private unsubscribe: Subject<void> = new Subject();
 
@@ -26,7 +28,6 @@ export class OrderSheetComponent implements OnInit, OnDestroy {
   customerNameControl;
 
   constructor(
-    private config: AppConfig,
     private formBuilder: FormBuilder
   ) {
     this.buildForm();
@@ -34,9 +35,7 @@ export class OrderSheetComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('calling config ...');
-    console.log('environment:', this.config.GetEnv('env'));
-    console.log('apiurl:', this.config.GetConfig('apiUrl'));
-    console.log('reporturl:', this.config.GetConfig('reportUrl'));
+    console.log(this.config);
   }
 
   ngOnDestroy() {
